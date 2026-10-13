@@ -1,0 +1,46 @@
+[
+  {
+    "id": "harbor-plan",
+    "type": "Shared-storage document",
+    "title": "Harbor onboarding pilot plan",
+    "author": "Priya Shah",
+    "team": "Customer Success",
+    "body": "FICTIONAL LOCAL SAMPLE. Harbor Onboarding Pilot prepares a three-customer onboarding trial. Project owner Priya Shah owns pilot handoff. Omar Bell in Enablement owns the approved training checklist. Ren Wu owns pilot start review. Approved training checklist \u2192 pilot handoff \u2192 pilot start. This is a distinct customer onboarding project, unrelated to Atlas R1.",
+    "version": 1,
+    "eventAt": "2026-10-13T00:40:00Z",
+    "projectId": "harbor-pilot",
+    "ingestedAt": "2026-10-13T01:24:00Z",
+    "sample": true,
+    "storageNotice": "Local fixture only; not uploaded to HydraDB"
+  },
+  {
+    "id": "harbor-checklist",
+    "type": "Individual task",
+    "title": "Harbor pilot checklist",
+    "author": "Omar Bell",
+    "team": "Enablement",
+    "body": "FICTIONAL LOCAL SAMPLE\ntask_id,owner,task,status,depends_on\nHBR-01,Omar Bell,Approve support training checklist,blocked,missing escalation contact\nHBR-02,Priya Shah,Prepare pilot handoff,waiting,HBR-01\nHBR-03,Ren Wu,Review pilot start,waiting,HBR-02\n",
+    "version": 1,
+    "eventAt": "2026-10-13T00:50:00Z",
+    "projectId": "harbor-pilot",
+    "ingestedAt": "2026-10-13T01:24:00Z",
+    "sample": true,
+    "storageNotice": "Local fixture only; not uploaded to HydraDB"
+  },
+  {
+    "id": "harbor-owner-update",
+    "type": "Team chat",
+    "title": "Harbor owner readiness update",
+    "author": "Priya Shah",
+    "team": "Customer Success",
+    "body": "FICTIONAL LOCAL SAMPLE. Harbor pilot is blocked: the training checklist still lacks an approved escalation contact. Omar Bell must confirm HBR-01 before Priya Shah can hand off HBR-02. Ren Wu reviews HBR-03 only after handoff. No pilot start or successful training completion is claimed.",
+    "authority": true,
+    "claim": "blocked",
+    "version": 1,
+    "eventAt": "2026-10-13T01:00:00Z",
+    "projectId": "harbor-pilot",
+    "ingestedAt": "2026-10-13T01:24:00Z",
+    "sample": true,
+    "storageNotice": "Local fixture only; not uploaded to HydraDB"
+  }
+]

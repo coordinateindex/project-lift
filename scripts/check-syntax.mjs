@@ -1,0 +1,2 @@
+import {readdir} from 'node:fs/promises';import {spawnSync} from 'node:child_process';import {fileURLToPath} from 'node:url';
+for(const folder of ['../app/','../tests/'])for(const name of await readdir(new URL(folder,import.meta.url)))if(/\.js$/.test(name)){const file=fileURLToPath(new URL(folder+name,import.meta.url));const result=spawnSync(process.execPath,['--check',file],{stdio:'inherit'});if(result.status!==0)process.exit(result.status||1);}console.log('Native Node syntax checks passed; no bundler or emitted build required.');

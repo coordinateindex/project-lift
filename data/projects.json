@@ -1,0 +1,186 @@
+{
+  "defaultProject": "atlas-r1",
+  "projects": [
+    {
+      "id": "atlas-r1",
+      "name": "Atlas R1",
+      "description": "Gateway readiness, integration, and release",
+      "engine": "atlas",
+      "localOnly": false,
+      "owner": "Elena Park",
+      "profiles": [
+        {
+          "person": "Maya Chen",
+          "team": "Core Platform",
+          "commitment": "Verify gateway recovery and sign-off"
+        },
+        {
+          "person": "Leo Santos",
+          "team": "Launch Experience",
+          "commitment": "Run integration after gateway sign-off"
+        },
+        {
+          "person": "Elena Park",
+          "team": "Release owner",
+          "commitment": "Review the evidence for the release decision"
+        },
+        {
+          "person": "Noah Reed",
+          "team": "Launch Experience",
+          "commitment": "Source contributor; no task assignment recorded"
+        }
+      ],
+      "dependencies": [
+        {
+          "title": "Gateway readiness",
+          "owner": "Maya Chen",
+          "note": "Recovery verification required",
+          "sourceId": "doc-1"
+        },
+        {
+          "title": "Integration",
+          "owner": "Leo Santos",
+          "note": "Follows gateway sign-off",
+          "sourceId": "task-1"
+        },
+        {
+          "title": "Release decision",
+          "owner": "Elena Park",
+          "note": "Follows integration",
+          "sourceId": "meeting-1"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "PLAT-17",
+          "title": "Verify gateway recovery and sign-off",
+          "owner": "Maya Chen",
+          "status": "verification needed",
+          "dependsOn": [],
+          "sourceIds": [
+            "ticket-1",
+            "incident-1",
+            "doc-1"
+          ]
+        },
+        {
+          "id": "INT-08",
+          "title": "Run dependent integration",
+          "owner": "Leo Santos",
+          "status": "waiting for gateway sign-off",
+          "dependsOn": [
+            "PLAT-17"
+          ],
+          "sourceIds": [
+            "task-1",
+            "doc-1"
+          ]
+        },
+        {
+          "id": "REL-R1",
+          "title": "Review the release decision",
+          "owner": "Elena Park",
+          "status": "waiting for integration",
+          "dependsOn": [
+            "INT-08"
+          ],
+          "sourceIds": [
+            "meeting-1",
+            "doc-1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "harbor-pilot",
+      "name": "Harbor Onboarding Pilot",
+      "description": "Prepare a three-customer onboarding pilot after training checklist approval.",
+      "engine": "local",
+      "localOnly": true,
+      "owner": "Priya Shah",
+      "sourceFile": "projects/harbor/sources.json",
+      "initialState": {
+        "status": "blocked",
+        "asOf": "2026-10-13T01:00:00Z",
+        "evidence": [
+          "harbor-owner-update"
+        ]
+      },
+      "profiles": [
+        {
+          "person": "Priya Shah",
+          "team": "Customer Success",
+          "commitment": "Prepare pilot handoff after checklist approval"
+        },
+        {
+          "person": "Omar Bell",
+          "team": "Enablement",
+          "commitment": "Confirm the missing escalation contact and approve training checklist"
+        },
+        {
+          "person": "Ren Wu",
+          "team": "Pilot Review",
+          "commitment": "Review pilot start after handoff"
+        }
+      ],
+      "dependencies": [
+        {
+          "title": "Training checklist",
+          "owner": "Omar Bell",
+          "note": "Missing escalation contact",
+          "sourceId": "harbor-checklist"
+        },
+        {
+          "title": "Pilot handoff",
+          "owner": "Priya Shah",
+          "note": "Follows checklist approval",
+          "sourceId": "harbor-owner-update"
+        },
+        {
+          "title": "Pilot start review",
+          "owner": "Ren Wu",
+          "note": "Follows pilot handoff",
+          "sourceId": "harbor-plan"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "HBR-01",
+          "title": "Approve support training checklist",
+          "owner": "Omar Bell",
+          "status": "blocked: missing escalation contact",
+          "dependsOn": [],
+          "sourceIds": [
+            "harbor-checklist"
+          ]
+        },
+        {
+          "id": "HBR-02",
+          "title": "Prepare pilot handoff",
+          "owner": "Priya Shah",
+          "status": "waiting for HBR-01",
+          "dependsOn": [
+            "HBR-01"
+          ],
+          "sourceIds": [
+            "harbor-checklist",
+            "harbor-plan"
+          ]
+        },
+        {
+          "id": "HBR-03",
+          "title": "Review pilot start",
+          "owner": "Ren Wu",
+          "status": "waiting for HBR-02",
+          "dependsOn": [
+            "HBR-02"
+          ],
+          "sourceIds": [
+            "harbor-checklist",
+            "harbor-plan"
+          ]
+        }
+      ]
+    }
+  ]
+}

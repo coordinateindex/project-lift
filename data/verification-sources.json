@@ -1,0 +1,62 @@
+{
+  "blocked": {
+    "read_gateway_probe": {
+      "id": "probe-1",
+      "type": "Incident stream",
+      "title": "Independent gateway health probe",
+      "author": "Gateway health monitor",
+      "team": "Core Platform",
+      "eventAt": "2026-10-12T20:26:00Z",
+      "version": 1,
+      "subject": "gateway",
+      "claim": "blocked",
+      "authority": true,
+      "evidenceKind": "measurement",
+      "independent": true,
+      "body": "FICTIONAL INDEPENDENT MEASUREMENT. At 13:26 Pacific, gateway probe observed 18 failures in 20 requests after attempted rollback. Gateway stability criterion is not met. This measurement is independent of Noah's chat and Maya's ticket. It contradicts clearance and supports holding Leo's integration. No successful recovery observation is present."
+    },
+    "read_owner_ticket": {
+      "id": "ticket-1",
+      "type": "Tickets / wiki",
+      "title": "PLAT-17 recovery sign-off blocked",
+      "author": "Maya Chen",
+      "team": "Core Platform",
+      "eventAt": "2026-10-12T20:12:00Z",
+      "version": 2,
+      "subject": "gateway",
+      "claim": "blocked",
+      "authority": true,
+      "body": "FICTIONAL. PLAT-17 is blocked by INC-42. Gateway recovery must be verified before Leo Santos can begin integration. Operational owner Maya Chen has not signed off."
+    }
+  },
+  "recovered": {
+    "read_gateway_probe": {
+      "id": "probe-1",
+      "type": "Incident stream",
+      "title": "Independent gateway recovery probe",
+      "author": "Gateway health monitor",
+      "team": "Core Platform",
+      "eventAt": "2026-10-12T20:40:00Z",
+      "version": 2,
+      "subject": "gateway",
+      "claim": "cleared",
+      "authority": true,
+      "evidenceKind": "measurement",
+      "independent": true,
+      "body": "FICTIONAL INDEPENDENT MEASUREMENT. At 13:40 Pacific, gateway probe observed 20 successes in 20 requests after rollback. Gateway stability criterion is met. This independent measurement supersedes the earlier failed probe. It verifies the gateway prerequisite, not integration completion or a final release decision."
+    },
+    "read_owner_ticket": {
+      "id": "ticket-1",
+      "type": "Tickets / wiki",
+      "title": "PLAT-17 owner recovery sign-off",
+      "author": "Maya Chen",
+      "team": "Core Platform",
+      "eventAt": "2026-10-12T20:45:00Z",
+      "version": 3,
+      "subject": "gateway",
+      "claim": "cleared",
+      "authority": true,
+      "body": "FICTIONAL AUTHORITATIVE OWNER RECORD. Maya Chen confirms PLAT-17 recovery sign-off at 13:45 Pacific after checking the successful gateway measurement. INC-42 gateway prerequisite is cleared. Leo may begin dependent integration. This supersedes the older blocked ticket; integration and release are not yet complete."
+    }
+  }
+}

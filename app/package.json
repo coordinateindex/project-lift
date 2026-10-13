@@ -1,0 +1,27 @@
+{
+  "name": "project-lift-demo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node ../scripts/start-offline.mjs",
+    "test": "node --test ../tests/state.test.ts ../tests/evidence.test.ts ../tests/projects.test.ts ../tests/reason.test.ts ../tests/updates.test.ts ../tests/offline-adapter.test.ts",
+    "test:ui": "node ../tests/run-ui.ts",
+    "build": "npm run check:syntax && npm run typecheck",
+    "check:syntax": "node ../scripts/check-syntax.mjs",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "security": "npm audit --audit-level=moderate",
+    "security:signatures": "npm audit signatures",
+    "verify:offline": "node ../scripts/verify-offline.mjs"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jsdom": "30.1.2",
+    "typescript": "5.9.3",
+    "@types/node": "24.10.1"
+  },
+  "packageManager": "npm@11.19.0",
+  "engines": {
+    "node": ">=24.15.0 <25",
+    "npm": "11.19.0"
+  }
+}
